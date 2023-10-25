@@ -1,4 +1,9 @@
 body {
-    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: max-content;
+    min-height: 100vh;
+    margin: 0px;
     background: linear-gradient(#42006C,#2A00B7);
 }
