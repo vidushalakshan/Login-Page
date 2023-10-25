@@ -1,5 +1,6 @@
 .icon {
     width: 20px;
+    margin: 0px 30px;
 } 
 
 .container {
@@ -46,4 +47,14 @@
     height: 80px;
     background: #eaeaea;
     border-radius: 6px;
+}
+
+.input input {
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 20px;
 }
