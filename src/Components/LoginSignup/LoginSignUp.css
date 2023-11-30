@@ -63,12 +63,12 @@
 .forgot-password {
     padding-left: 62px;
     margin-top: 27px;
-    color: #797979;
+    color: #ffffff;
     font-size: 18px;
 }
 
 .forgot-password span {
-    color: #4c00b4;
+    color: #dbc0ff;
     cursor: pointer;
 }
 
