@@ -1,36 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LoginSignUp.css";
 
 const LoginSignUp = () => {
+  const [action, setAction] = useState("Sign Up");
+
   return (
     <div className="container">
       {/* start header section */}
       <div className="header">
-        <div className="text">Sign Up</div>
-        <div className="underline"></div>
+        <div className="submit-container">
+          <div
+            className={action === "Login" ? "submit gray" : "submit"}
+            onClick={() => {
+              setAction("Sign Up");
+            }}
+          >
+            Sign Up
+          </div>
+          <div
+            className={action === "Sign Up" ? "submit gray" : "submit"}
+            onClick={() => {
+              setAction("Login");
+            }}
+          >
+            Login
+          </div>
+        </div>
       </div>
       {/* End header section */}
 
       {/* start  input section */}
       <div className="inputs">
-        <div className="input">
-          <svg
-            className="icon"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-            ></path>
-          </svg>
-          <input type="text" placeholder="Name" />
-        </div>
+        {action === "Login" ? (
+          <div></div>
+        ) : (
+          <div className="input">
+            <svg
+              className="icon"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              ></path>
+            </svg>
+            <input type="text" placeholder="Name" />
+          </div>
+        )}
         <div className="input">
           <svg
             className="icon"
@@ -69,13 +91,16 @@ const LoginSignUp = () => {
         </div>
       </div>
 
-      <div className="forgot-password">
-        Fogot Password ? <span>Click Here!</span>
-      </div>
+      {action === "Sign Up" ? (
+        <div></div>
+      ) : (
+        <div className="forgot-password">
+          Fogot Password ? <span>Click Here!</span>
+        </div>
+      )}
 
-      <div className="submit-container">
-        <div className="submit">Singn Up</div>
-        <div className="submit">Login</div>
+      <div className="submit-btn">
+        <div className="btn">{action}</div>
       </div>
     </div>
   );
